@@ -198,8 +198,11 @@ RUN pip install -q \
     spacy \
     nltk \
     torchtext && \
-    python -m spacy download en_core_web_sm && \
-    python -m nltk.downloader punkt perluniprops nonbreaking_prefixes
+    python -m spacy download en_core_web_sm
+
+# TODO: resolve this
+# NLTK downloads may give unpredictable behaviour
+# python -m nltk.downloader punkt perluniprops nonbreaking_prefixes
 
 # Switch back to geez to avoid accidental container runs as root
 USER $NB_UID
