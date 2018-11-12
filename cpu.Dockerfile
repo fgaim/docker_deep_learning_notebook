@@ -188,7 +188,7 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
 RUN conda install --quiet --yes \
     'tensorflow=1.11*' \
     'keras=2.2*' && \
-    conda install --quiet --yes pytorch torchvision -c pytorch && \
+    conda install --quiet --yes 'pytorch=0.4.1' torchvision -c pytorch && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
