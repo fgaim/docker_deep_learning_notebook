@@ -34,13 +34,15 @@ $ docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes --runtime="nvidia" -v 
 
 The server logs appear in the terminal. Visiting `http://<hostname>:10000/?token=<token>` in a browser loads JupyterLab, where hostname is the name of the computer running docker and token is the secret token printed in the console. 
 
-To check if GPU access has been enabled properly, open Terminal within Jupyter and run the following command. You should see details of the installed GPU device/s.
+To check if GPU access has been enabled properly, open Terminal within Jupyter and run the following command:
 
 ```
 $ nvidia-smi
 ```
 
-Docker destroys the container after notebook server exit, but any files written to ~/dev in the container remain intact on the host.  
+Thaat should print details of the installed GPU device/s.
+
+> Note that docker destroys the container after the notebook server exits, but all files written to `~/dev` directory in the container remain intact on the host.  
 
 
 ## External Sources
